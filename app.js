@@ -6,7 +6,8 @@ const cors = require('cors');
 
 // connect to db - mlab 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://hagar:test123@cluster0.rqobx.mongodb.net/BooksDB?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://hagar:test123@cluster0.rqobx.mongodb.net/BooksDB?retryWrites=true&w=majority').then(() => console.log("Connection Successful"))
+    .catch(err => console.log(err));
 mongoose.connection.once('open', () => {
     console.log("connected to mongo DB")
 })
