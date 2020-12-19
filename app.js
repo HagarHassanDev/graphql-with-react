@@ -7,7 +7,8 @@ const cors = require('cors');
 // connect to db - mlab 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://hagar:test123@cluster0.rqobx.mongodb.net/BooksDB?retryWrites=true&w=majority' , {
- useNewUrlParser: true 
+ useNewUrlParser: true  , 
+ useUnifiedTopology: true 
 }).then(() => console.log("Connection Successful"))
     .catch(err => console.log(err));
 mongoose.connection.once('open', () => {
